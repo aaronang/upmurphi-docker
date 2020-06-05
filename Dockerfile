@@ -8,5 +8,6 @@ RUN /bin/bash -c "echo 'deb http://archive.ubuntu.com/ubuntu trusty-backports ma
     && rm -rf /var/lib/apt/lists/*
 
 RUN git clone --single-branch --branch master-x64 https://github.com/gdellapenna/UPMurphi.git /UPMurphi \
-    && make --directory /UPMurphi/src \
-    && ln -s /UPMurphi/bin/upmc /usr/local/bin/upmc
+    && make --directory /UPMurphi/src
+
+WORKDIR /UPMurphi/ex/workspace
